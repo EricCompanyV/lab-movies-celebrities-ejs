@@ -1,0 +1,15 @@
+<h2>Movie details</h2>
+
+<p>Title: <%= movieDetails.title %></p>
+<p>Genre: <%= movieDetails.genre %> </p>
+<p>Plot: <%= movieDetails.plot %> </p>
+<% movieDetails.cast.forEach((element, index) => { %>
+<p>Actor <%= index+1 %>: <%= element.name %></p>
+<p>Occupation: <%= element.occupation%></p>
+<p>Catch phrase: <%= element.catchPhrase%></p>
+<% }) %>
+<form action="/movies/<%= movieDetails.id %>/delete" method="POST">
+    <button type="submit">Delete movie</button>
+</form>
+<br>
+<a href="/movies/<%= movieDetails.id %>/edit">Edit movie</a>

@@ -1,0 +1,26 @@
+<h2>Edit a movie</h2>
+<form action="/movies/<%= movieEdit.id %>/edit" method="POST">
+  <label>
+    Title:
+    <input type="text" name="title" value="<%= movieEdit.title %> " />
+  </label>
+  <label>
+    Genre:
+    <input type="text" name="genre" value="<%= movieEdit.genre %> " />
+  </label>
+  <label>
+    Plot:
+    <input type="text" name="plot" value="<%= movieEdit.plot %> " />
+  </label>
+  <select name="cast" multiple>
+    <% celebritiesFromDB.forEach(element => { %>
+        <%= console.log(element._id,movieEdit)%>
+     <% if (movieEdit.cast.includes(element.id)) { %>
+        
+    <option value="<%= element.id %>" selected="selected"><%= element.name %></option>
+    <% } else {%>
+    <option value="<%= element.id %>"><%= element.name %></option>
+    <% }}) %>
+  </select>
+  <button type="submit">Edit movie</button>
+</form>
