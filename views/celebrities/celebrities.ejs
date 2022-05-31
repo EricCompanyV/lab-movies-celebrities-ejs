@@ -1,4 +1,4 @@
 <h2>Celebrities</h2>
 <% celebritiesFromDB.forEach(celebrity => { %>
-    <p><%= celebrity.name %> </p>
+    <a href="/celebrities/<%= celebrity.id %>/edit"><p><%= celebrity.name %> </p></a>
 <% }) %>

@@ -59,7 +59,7 @@ router.post("/:id/edit", async (req, res, next) => {
       res.redirect(`/movies/${req.params.id}`)
   } catch (error) {
     console.log("Error occured while updating a movie", error)
-    res.redirect("./movies/:id/delete")
+    res.redirect("./movies/:id/edit")
   }
 });
 
